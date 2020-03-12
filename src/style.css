@@ -1,0 +1,37 @@
+.main, .list-modal-main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.widget-main {
+    width: 100%;
+    min-height: 100px;
+}
+
+.no-value {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.chips {
+    margin: 10px 10px 10px 0;
+}
+
+.widget-button {
+    margin-top: 40px;
+}
+
+.filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
