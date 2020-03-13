@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function ListModal(props) {
-    const {data, buttonName, checkedItem, checkedChanges} = props;
+    const {data, checkedItem, checkedChanges} = props;
     const [open, setOpen] = React.useState(false);
     const [checked, setChecked] = React.useState([...checkedItem]);
     const [selectValue, setSelectValue] = useState(-1);
@@ -67,7 +67,7 @@ export default function ListModal(props) {
                 onClick={handleClickOpen}
                 className="widget-button"
             >
-                {buttonName}
+                Изменить свой выбор
             </Button>
             <Dialog
                 fullWidth={true}

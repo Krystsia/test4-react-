@@ -2,13 +2,7 @@ import {Chip} from "@material-ui/core";
 import ListModal from "./components/ListModal";
 import React, {useState} from "react";
 
-const getItems = () => {
-    const result = [];
-    for (let i = 0; i < 300; i++) {
-        result.push(`item ${i}`);
-    }
-    return result;
-};
+const getItems = () => new Array(300).fill('item').map((item, idx) => `${item} ${idx}`);
 
 const TestWidget = () => {
     const [chips, setChips] = useState([]);
@@ -18,13 +12,13 @@ const TestWidget = () => {
         setChips(chips.filter(item => item !== value));
     };
 
-    const updateChips = (value) => {
+    const onCheckedChanges = (value) => {
         setChips(value);
     };
 
     return (
         <div className="widget-main">
-            {!chips.length && <div className="no-value">У вас ничего не выбрано</div>}
+            {!chips.length ? <div className="no-value">У вас ничего не выбрано</div> : null}
             {chips.map(item => {
                 return (
                     <Chip
@@ -37,9 +31,8 @@ const TestWidget = () => {
             })}
             <ListModal
                 data={data}
-                buttonName="Изменить свой выбор"
                 checkedItem={chips}
-                checkedChanges={updateChips}
+                checkedChanges={onCheckedChanges}
             />
         </div>
     )
